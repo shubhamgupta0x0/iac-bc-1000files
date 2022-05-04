@@ -76,7 +76,7 @@ resource "aws_db_instance" "iac-apsouth1-rds-mysql" {
   parameter_group_name = "default.mysql5.7"
   publicly_accessible = "true"
   vpc_security_group_ids = ["${aws_security_group.apsouth1-rds-mysqlopentoall.id}"]
-  storage_encrypted = "false"
+  storage_encrypted = true
   final_snapshot_identifier = "iac-apsouth1-rds-mysql-snapshot"
   skip_final_snapshot = "true" 
   tags = {
